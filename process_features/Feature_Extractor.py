@@ -13,8 +13,9 @@ class Feature_extractor(ABC):
     def get_transformers(self):
         transformers = []
         for feat in self.features:
+            print(feat)
             transformers.append(self.get_pipeline(feat))
-        return  transformers
+        return transformers
 
 
 

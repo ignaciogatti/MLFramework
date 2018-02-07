@@ -7,6 +7,6 @@ class Text_features_extractor(Feature_extractor):
 
     def get_pipeline(self, feat):
 
-        p = Pipeline(['extract', ColumnExtractor(feat),
-                      'tfidf', TfidfVectorizer()])
-        return p
+        p = Pipeline([('extract', ColumnExtractor(feat)),
+                      ('tfidf', TfidfVectorizer())])
+        return (feat ,p)
